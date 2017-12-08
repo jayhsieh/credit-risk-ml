@@ -16,7 +16,7 @@ select
       t.transaction_days_since_first_completed as FEATURE_days_since_first_completed,
       cd.customer_limit_six_month_limit as FEATURE_six_month_send_limit,
       pp.payment_profile_type as FEATURE_account_type,
-      SUBSTRING(pp.payment_profile_institution,0,5) as FEATURE_send_bank, 
+      --SUBSTRING(pp.payment_profile_institution,0,5) as FEATURE_send_bank, 
       EXTRACT(DAY FROM t.transaction_created_datetime) as FEATURE_day_of_month,
       DATEDIFF (day, cd.customer_date_of_birth_datevalue, t.transaction_created_datetime) as FEATURE_customer_age,
       (select count(*) from transactions t2 
